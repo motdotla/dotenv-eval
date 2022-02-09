@@ -1,0 +1,14 @@
+{
+  "name": "dotenv-eval",
+  "version": "0.1.0",
+  "description": "Add command substitution to dotenv",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dotenv"
+  ],
+  "author": "motdotla",
+  "license": "BSD-2-Clause"
+}
