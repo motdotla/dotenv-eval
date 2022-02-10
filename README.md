@@ -7,6 +7,80 @@ Dotenv-eval adds command evaluation on top of
 add the output of a command in one of your environment variables, then
 dotenv-eval is your tool.
 
+## Install
+
+```bash
+# Install locally (recommended)
+npm install dotenv-eval --save
+```
+
+Or installing with yarn? `yarn add dotenv-eval`
+
+## Usage
+
+Create a `.env` file in the root of your project:
+
+```dosini
+GREETING="$(echo hello)"
+```
+
+As early as possible in your application, import and configure dotenv and then eval dotenv:
+
+```javascript
+var dotenv = require('dotenv')
+var dotenvEval = require('dotenv-eval')
+
+var myEnv = dotenv.config()
+dotenvEval.eval(myEnv)
+
+console.log(process.env)
+```
+
+That's it. `process.env` now has the evaluated (command substitution) values you defined in your `.env` file.
+
+## Documentation
+
+DotenvEval exposes one function:
+
+* eval
+
+### Eval
+
+`eval` will evaluate (command substitution) your environment variables.
+
+```js
+const dotenv = {
+  parsed: {
+    BASIC_SUBSTITUTE: '$(echo hello)'
+  }
+}
+
+const obj = dotenvEval.eval(dotenv)
+
+console.log(obj) // { BASIC_SUBSTITUTE: 'hello' }
+```
+
+#### Options
+
+##### ignoreProcessEnv
+
+Default: `false`
+
+Turn off writing to `process.env`.
+
+```js
+const dotenv = {
+  ignoreProcessEnv: true,
+  parsed: {
+    SHOULD_NOT_EXIST: 'testing'
+  }
+}
+const obj = dotenvEval.eval(dotenv).parsed
+
+console.log(obj.SHOULD_NOT_EXIST) // testing
+console.log(process.env.SHOULD_NOT_EXIST) // undefined
+```
+
 ## CHANGELOG
 
 See [CHANGELOG.md](CHANGELOG.md)
