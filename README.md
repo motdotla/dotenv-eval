@@ -81,6 +81,17 @@ console.log(obj.SHOULD_NOT_EXIST) // testing
 console.log(process.env.SHOULD_NOT_EXIST) // undefined
 ```
 
+## FAQ
+
+### What rules does the command substitution engine follow?
+
+The substitution engine roughly has the following rules:
+
+* `$(command)` will substitute any command inside the `$(  )`
+* `\$(command)` will escape the `$(command)` rather than substitute it
+
+You can see a full list of examples [here](https://github.com/motdotla/dotenv-eval/blob/master/tests/.env).
+
 ## CHANGELOG
 
 See [CHANGELOG.md](CHANGELOG.md)
