@@ -3,12 +3,43 @@
   "version": "0.1.0",
   "description": "Add command substitution to dotenv",
   "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/main.js",
+      "types": "./lib/main.d.ts",
+      "default": "./lib/main.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "test": "lab tests/* --coverage"
   },
   "keywords": [
-    "dotenv"
+    "dotenv",
+    "command",
+    "substitution",
+    "variables",
+    "env",
+    ".env"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/motdotla/dotenv-expand"
+  },
   "author": "motdotla",
-  "license": "BSD-2-Clause"
+  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "dotenv": "^16.0.0",
+    "lab": "^14.3.4",
+    "should": "^11.2.1",
+    "standard": "^16.0.4",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=12"
+  }
 }
