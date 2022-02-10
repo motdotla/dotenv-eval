@@ -92,6 +92,10 @@ The substitution engine roughly has the following rules:
 
 You can see a full list of examples [here](https://github.com/motdotla/dotenv-eval/blob/master/tests/.env).
 
+## Contributing Guide
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## CHANGELOG
 
 See [CHANGELOG.md](CHANGELOG.md)
