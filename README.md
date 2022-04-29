@@ -1,3 +1,5 @@
+Works with [dotenv-vault](https://github.com/dotenv-org/dotenv-vault). Learn more at [dotenv.org/vault](https://dotenv.org/vault).
+
 # dotenv-eval
 
 <img src="https://raw.githubusercontent.com/motdotla/dotenv-eval/master/dotenv-eval.png" alt="dotenv-eval" align="right" />
